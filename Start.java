@@ -25,7 +25,7 @@ public class Start {
 					miCalculadora.opSuma();
 					break;
 				case 2:
-					miCalculdora.opResta();
+					miCalculadora.opResta();
 					break;
 				case 0:
 					System.out.println("Bye ;)");
@@ -34,67 +34,6 @@ public class Start {
 					break;
 			}
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		/*System.out.print("1.- suma");
-		System.out.print("introduzca valor número uno");
-		numUno =entradaDatos.nextFloat();
-		System.out.print("introduzca valor número dos");
-		numDos=entradaDatos.nextFloat();
-		resultado = (numUno)+(numDos);
-		return; 
-		
-		System.out.print("2.- resta");
-		System.out.print("introduzca valor número uno");
-		numUno =entradaDatos.nextFloat();
-		System.out.print("introduzca valor número dos");
-		numDos=entradaDatos.nextFloat();
-		resultado = (numUno)-(numDos);
-		return;
-		
-		
-		System.out.print("3.- Multiplicar");
-		System.out.print("introduzca valor número uno");
-		numUno =entradaDatos.nextFloat();
-		System.out.print("introduzca valor número dos");
-		numDos=entradaDatos.nextFloat();
-		resultado = (numUno)*(numDos);
-		return;
-		
-		System.out.print("4.- Dividir");
-		System.out.print("introduzca valor número uno");
-		numUno =entradaDatos.nextFloat();
-		System.out.print("introduzca valor número dos");
-		numDos=entradaDatos.nextFloat();
-		resultado = (numUno)/(numDos);
-		return;
-		
-		
-		System.out.print("5.- Elija un número mayor de tres números  ");
-		System.out.print("introduzca valor número uno");
-		numUno =entradaDatos.nextFloat();
-		System.out.print("introduzca valor número dos");
-		numDos=entradaDatos.nextFloat();
-		System.out.print("introduzca valor número tres");
-		numTres=entradaDatos.nextFloat();
-		if (numUno >0 && numDos >0 && numTres >0);
-		return;
-		
-		
-		System.out.print("6.- capicua");
-	    while (n < 10);
-		resultado= (n) + (inverso);
-		boolean invertido = true; */
-		
-		
-		
-		
 		
 	}
 
@@ -117,6 +56,8 @@ public class Start {
 
 
 
+	// ------- Operación de Suma -------
+
 	public void opSuma() {
 
 		System.out.println("1.- suma");
@@ -128,9 +69,17 @@ public class Start {
 		System.out.println("Resultado: " + suma(x,y));
 	}
 
+
+
+
 	public int suma(int x, int y) {
 		return x + y;
 	}
+
+
+
+
+// ------- Operación de Resta -------	
 
 	public void opResta() {
 
