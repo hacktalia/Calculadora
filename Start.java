@@ -19,6 +19,7 @@ public class Start {
 		
 		 
 		Start calculadoraTextual = new Start();
+		System.out.println("Inversio de 1234: " + calculadoraTextual.invertir(1234));
 
 		while(true){
 			int opcion = (int) calculadoraTextual.menu();
@@ -218,6 +219,17 @@ public class Start {
 
 			
 		
+		}
+
+		public int invertir(int x) {
+			String stNumber = String.valueOf(x);
+			String result = new String();
+
+			for (int i = stNumber.length(); i>0; i--) 
+				result = result + (stNumber.charAt(i-1));
+
+		
+			return Integer.parseInt(result);
 		}
 }	
 					
