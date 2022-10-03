@@ -41,13 +41,13 @@ public class Start {
 					 calculadoraTextual.opMayorDeTres();
 					break;
 				case 6:
-					calculadoraTextual.opcapicua(opcion);
-				break;
-					
+					calculadoraTextual.opCapicua();
+					break;			
 				case 0:
 					System.out.println("Bye ;)");
 					System.exit(1);
 				default:
+					System.out.println("La opción introducida no es válida");
 					break;
 			}
 		}
@@ -133,19 +133,19 @@ public class Start {
 	
 	// ------- Operación de Dividir -------	
 
-		public void opDividir() {
+	public void opDividir() {
 
-			System.out.println("4.- dividir");
-			System.out.println("introduzca valor número uno");
-			float x = sc.nextFloat();
-			System.out.println("introduzca valor número dos");
-			float y = sc.nextFloat();
-			System.out.println("Resultado: " + Dividir(x,y));
-		}
+		System.out.println("4.- dividir");
+		System.out.println("introduzca valor número uno");
+		float x = sc.nextFloat();
+		System.out.println("introduzca valor número dos");
+		float y = sc.nextFloat();
+		System.out.println("Resultado: " + Dividir(x,y));
+	}
 
-		public float Dividir(float x, float y) {
-			return x / y;
-		}
+	public float Dividir(float x, float y) {
+		return x / y;
+	}
 		
 		
 
@@ -183,38 +183,15 @@ public class Start {
 			
 			 // ------- Capicua-------	
 
-			public void opcapicua(int invertido) {
+		public void opCapicua() {
+			System.out.println ("introduzca un número  : ");
+			int numero = sc.nextInt();
 
-			      System.out.println("esta es la opción 6");
-			      System.out.println ("introduzca un número  : ");
-			      int numero = sc.nextInt();
-			      int resto =sc.nextInt ();
-			      int numInver =sc.nextInt ();
-			     
-					   while (numero!=0)
-					   {
-						   resto=numero%10;
-						   invertido = invertido * 10+ resto;
-						   numero= numero/10;
-					   
-						   
-		if (numero == numInver){
-		
-		
-		System.out.println("Es capicua");
-		
-	          
-		}	else {
-	          System.out.println("No es capicua");
-	          
-		}
-
-	
-		
-		System.out.println ("Fin de las operaciones");
-		
-					   
-					   }
+			if (numero == invertir(numero))
+				System.out.println("El número es capicua");
+			else
+				System.out.println("El número NO es capicua");
+			      
 					   
 
 			
