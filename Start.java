@@ -1,5 +1,6 @@
 
 
+	
 import java.util.Scanner;
 
 
@@ -19,10 +20,16 @@ public class Start {
 		
 		 
 		Start calculadoraTextual = new Start();
-		System.out.println("Inversio de 1234: " + calculadoraTextual.invertir(1234));
 
 		while(true){
 			int opcion = (int) calculadoraTextual.menu();
+			
+			if (opcion>=6) {
+			}
+			else {
+				
+				}
+			System.out.println("Opción errónea");
 
 			switch(opcion){
 				case 1:
@@ -32,7 +39,7 @@ public class Start {
 					calculadoraTextual.opResta();
 					break;
 				case 3:
-					calculadoraTextual.opmultiplicar();
+					calculadoraTextual.opMultiplicar();
 				break;
 				case 4:
 					calculadoraTextual.opDividir();
@@ -41,31 +48,36 @@ public class Start {
 					 calculadoraTextual.opMayorDeTres();
 					break;
 				case 6:
-					calculadoraTextual.opCapicua();
-					break;			
+					calculadoraTextual.opFactorial();
+					break;
+					
 				case 0:
-					System.out.println("Bye ;)");
+					System.out.println("El programa ha finalizado");
 					System.exit(1);
 				default:
-					System.out.println("La opción introducida no es válida");
 					break;
 			}
 		}
 		
 	}
+	
+	
 
 	public float menu() {
 		
-		System.out.println("Calculadora de Calculator S.A.");
-		System.out.println("________________________________________\n");
+		System.out.println("***************************************");
+		System.out.println("**** Calculadora de Calculator S.A.****");
+		System.out.println("***************************************");
+		System.out.println(" ");
+		System.out.println(" ");
 		
 		System.out.println("Introduzca una operación del menú: ");
-		System.out.println("1.- Suma");
-		System.out.println("2.- Resta");
-		System.out.println("3.- Multiplicar");
-		System.out.println("4.- Dividir");
-		System.out.println("5.- Elija un número mayor de tres números");
-		System.out.println("6.- Capicua");
+		System.out.println("1.- FunciónSumar");
+		System.out.println("2.- FunciónRestar");
+		System.out.println("3.- FunciónMultiplicar");
+		System.out.println("4.- FunciónDividir");
+		System.out.println("5.- Función Número mayor de tres números");
+		System.out.println("6.- FunciónFactorial");
 		System.out.println("0.- Salir");
 
 		return sc.nextInt();
@@ -77,20 +89,19 @@ public class Start {
 
 	public void opSuma() {
 
-		System.out.println("1.- suma");
-		System.out.println("introduzca valor número uno");
-		float x=0.0f;
-		System.out.println("introduzca valor número dos");
-		float y =0.0f;
+		System.out.println("1.- FunciónSumar");
+		System.out.println("introduzca el primer número flotante a sumar: ");
+		float x = sc.nextFloat();
+		System.out.println("introduzca el segungo número flotante a sumar: ");
+		float y = sc.nextFloat();
 
 		System.out.println("Resultado: " + suma(x,y));
 	}
-
-
-
+	
+	
 
 	public float suma(float x, float y) {
-		return x + y;
+		return x +y;
 	}
 
 
@@ -100,10 +111,10 @@ public class Start {
 
 	public void opResta() {
 
-		System.out.println("2.- resta");
-		System.out.println("introduzca valor número uno");
+		System.out.println("2.- FunciónRestar");
+		System.out.println("introduzca el primero número flotante a restar: ");
 		float x = sc.nextFloat();
-		System.out.println("introduzca valor número dos");
+		System.out.println("introduzca el segungo número flotante a restar: ");
 		float y = sc.nextFloat();
 
 		System.out.println("Resultado: " + resta(x,y));
@@ -116,13 +127,13 @@ public class Start {
 	
 	// ------- Operación de Multiplicar -------	
 
-	public void opmultiplicar() {
+	public void opMultiplicar() {
 
-		System.out.println("3.- multiplicar");
-		System.out.println("introduzca valor número uno");
-		float x = sc.nextInt();
-		System.out.println("introduzca valor número dos");
-		float y = sc.nextInt();
+		System.out.println("3.- FunciónMultiplicar");
+		System.out.println("introduzca el primer número flotante a multiplicar: ");
+		float x = sc.nextFloat();
+		System.out.println("introduzca el segundo número flotante a multiplicar: ");
+		float y = sc.nextFloat();
 
 		System.out.println("Resultado: " + multiplicar(x,y));
 	}
@@ -132,34 +143,59 @@ public class Start {
 	}
 	
 	// ------- Operación de Dividir -------	
-
+	
 	public void opDividir() {
 
-		System.out.println("4.- dividir");
-		System.out.println("introduzca valor número uno");
+		System.out.println("4.- FunciónDividir");
+		System.out.println("introduzca el primer número flotante a dividir: ");
 		float x = sc.nextFloat();
-		System.out.println("introduzca valor número dos");
+		System.out.println("introduzca el segundo número flotante a dividir: ");
 		float y = sc.nextFloat();
-		System.out.println("Resultado: " + Dividir(x,y));
-	}
-
-	public float Dividir(float x, float y) {
-		return x / y;
-	}
 		
 		
-
+		if(y!=0) {
+			
+		System.out.println("Resultado:"  + division (x,y));
+			
+			
+			}
+		
+		
+			else if (y==0) {
+			
+			System.out.println("Error division por 0");
+			
+			}
+		
+		else division(x,y);
+		
+			
+		}
+	
+	
+		
+	public float division(float x, float y) {	
+	return x/y;
+	
+	
+		
+	}
+	
+	
 		// ------- Número mayor de tres números-------	
+
+
+
 
 		public void opMayorDeTres() {
 
-			System.out.println("5.- Elija un número mayor de tres números");
-			System.out.println("introduzca valor número uno");
-			int x = sc.nextInt();
-			System.out.println("introduzca valor número dos");
-			int y = sc.nextInt();
-			System.out.println ("introduzca valor númeo tres");
-			int z = sc.nextInt();
+			System.out.println("5.- Función Número mayor de 3 números");
+			System.out.println("introduzca el primer número flotante de los 3");
+			float x = sc.nextFloat();
+			System.out.println("introduzca el segundo número flotante de los 3");
+			float y = sc.nextFloat();
+			System.out.println ("introduzca el tercer número flotante de los 3");
+			float z = sc.nextFloat();
 			
 
 
@@ -167,51 +203,49 @@ public class Start {
 	            if (x > z) {
 	                System.out.println("El mayor es: " + x);                                             
 	            } else {
-	                System.out.println("el mayor es: " + z);     
+	                System.out.println("El mayor es: " + z);     
 	            }
 	        } else if (y > z) {
 	        	
 	        
 	            System.out.println("el mayor es: " + y);
-	        } else {
-	        	 System.out.println("el mayor es: " + z);
-	        }
-	          
-	        
-		}
+	            
+	            } else {
+		        	 System.out.println("el mayor es: " + z);
+		        }
+		          
+		        
+			}
+	            
+	        	
 				
 			
-			 // ------- Capicua-------	
+		// ------- Factorial-------//
 
-		public void opCapicua() {
-			System.out.println ("introduzca un número  : ");
-			int numero = sc.nextInt();
-
-			if (numero == invertir(numero))
-				System.out.println("El número es capicua");
-			else
-				System.out.println("El número NO es capicua");
-			      
-					   
-
+	public void opFactorial() {
+		
+		System.out.println("5.- FunciónFactorial");
+		System.out.println("introduzca un número para calcular el factorial");
+		int y=sc.nextInt ();
+		
+		
+		long factorial=1;
+		
+		for (int i=y; i>0; i--){
+			factorial =factorial*i;
 			
-		
-		}
+			}
+			
 
-		public int invertir(int x) {
-			String stNumber = String.valueOf(x);
-			String result = new String();
-
-			for (int i = stNumber.length(); i>0; i--) 
-				result = result + (stNumber.charAt(i-1));
-
-		
-			return Integer.parseInt(result);
-		}
-}	
-					
 				
-
-
-			
+		 System.out.println("El factorial de " + y + " es: " + factorial);
 	
+	
+			}	
+							
+					   
+					   
+}
+
+			
+							
